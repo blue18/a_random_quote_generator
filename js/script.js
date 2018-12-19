@@ -1,6 +1,6 @@
 // December 17, 2018 
 // Blue18 
-var quotes = [
+const quotes = [
   {
     quote: "I do not fear computers. I fear lack of them.",
     source: "Isaac Asimov"
@@ -34,32 +34,32 @@ function randomNumber(min_value, max_value) {
 
 // Get an object from the quotes list 
 function getRandomQuote() {
-  var floorMin = 0;
-  var random = randomNumber(floorMin, quotes.length);
+  const floorMin = 0;
+  let random = randomNumber(floorMin, quotes.length);
   return quotes[random];
 }
 
 function printQuote() {
-  var quoteObject = getRandomQuote();
-  var quote = quoteObject.quote;
-  var source = quoteObject.source;
-  var citation = quoteObject.citation;
-  var year = quoteObject.year;
-  var stringOfQuotePrperties = "";
+  let quoteObject = getRandomQuote();
+  let quote = quoteObject.quote;
+  let source = quoteObject.source;
+  let citation = quoteObject.citation;
+  let year = quoteObject.year;
+  let stringOfQuotePrperties = "";
 
   if (citation == null) {
     // print quote and source
-    var quoteString = '<p class="quote">' + quote + '</p>';
-    var sourceString = '<p class="source">' + source + '</p>';
+    let quoteString = '<p class="quote">' + quote + '</p>';
+    let sourceString = '<p class="source">' + source + '</p>';
     stringOfQuotePrperties = quoteString + sourceString;
 
   } else {
     // print all properties 
-    var quoteString = '<p class="quote">' + quote + '</p>';
-    var sourceString = '<p class="source">' + source;
-    var citationString = '<span class="citation">' + citation +'</span>';
-    var yearString = '<span class="year">' + year + '</span>';
-    var sourceStingEnd = '</p>';
+    let quoteString = '<p class="quote">' + quote + '</p>';
+    let sourceString = '<p class="source">' + source;
+    let citationString = '<span class="citation">' + citation +'</span>';
+    let yearString = '<span class="year">' + year + '</span>';
+    let sourceStingEnd = '</p>';
 
     // Compbine the HTML tags 
     stringOfQuotePrperties = quoteString + sourceString + citationString + yearString + sourceStingEnd;
